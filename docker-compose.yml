@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+
+  svc_mssql:
+    #image: microsoft/mssql-server-linux:latest
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      # Note: MSSQL passwords must be at least 8 characters long, contain upper case, lower case and digits.  
+      SA_PASSWORD: 5trongP@55w0rd 
+    volumes:
+      - vol_mssql:/var/opt/mssql
+    ports:
+      - "5033:1433"
+
+# Mounts
+volumes:
+  vol_mssql:
