@@ -10,7 +10,6 @@ services:
     #image: mcr.microsoft.com/mssql/server:2019-latest
     image: digitalmine/docker-mssql:latest
     container_name: "sql1"
-    #hostname: "sql1"
     environment:
       ACCEPT_EULA: "Y"
       # Note: MSSQL passwords must be at least 8 characters long, contain upper case, lower case and digits.  
