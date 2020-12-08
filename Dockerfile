@@ -2,6 +2,7 @@ FROM mcr.microsoft.com/mssql/server:2017-latest
 
 LABEL maintainer="steve@digitalmine.com"
 LABEL gitrepo="https://github.com/digitalminellc/docker-mssql"
+LABEL dockerrepo="https://hub.docker.com/r/digitalmine/docker-mssql"
 
 # Create a config directory
 RUN mkdir -p /usr/config
