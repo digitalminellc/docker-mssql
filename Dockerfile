@@ -1,5 +1,6 @@
 FROM mcr.microsoft.com/mssql/server:2017-latest
 
+LABEL version="1.0.1"
 LABEL maintainer="steve@digitalmine.com"
 LABEL gitrepo="https://github.com/digitalminellc/docker-mssql"
 LABEL dockerrepo="https://hub.docker.com/r/digitalmine/docker-mssql"

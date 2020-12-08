@@ -5,9 +5,6 @@ services:
   db:
     build:
       context: .
-      # args:
-      #   buildno: 1.0.0
-    #image: mcr.microsoft.com/mssql/server:2019-latest
     image: digitalmine/docker-mssql:latest
     container_name: "sql1"
     environment:

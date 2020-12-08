@@ -1,5 +1,7 @@
 # MSSQL for Docker
 
+This is **NOT** intended for production purposes and is for development purposes only.
+
 ## Get Up & Running
 
 [Docker Desktop](https://www.docker.com/products/docker-desktop) must installed and running on your computer (*Desktop Community* edition is perfectly fine) prior to following the steps below.
