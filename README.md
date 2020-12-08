@@ -1,10 +1,5 @@
 # MSSQL for Docker
 
-## Overview
-
-* Build a docker image based on mcr.microsoft.com/mssql/server
-* Configure the `setup.sql` with the T-SQL you want to run after SQL Server has started.
-
 ## Get Up & Running
 
 [Docker Desktop](https://www.docker.com/products/docker-desktop) must installed and running on your computer (*Desktop Community* edition is perfectly fine) prior to following the steps below.
@@ -42,7 +37,7 @@ Docker will then begin to do its thing.
 4. Start a new container using `docker run`
 
   ```bash
-  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=5trongP@55w0rd' -p 1433:1433 --name sql1 -d my-custom-mssql
+  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=5trongP@55w0rd' -p 5533:1433 --name sql1 -d my-custom-mssql
   ```
 
 Note: MSSQL passwords must be at least 8 characters long, contain upper case, lower case and digits.

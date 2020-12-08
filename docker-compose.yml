@@ -1,19 +1,25 @@
-version: '3.3'
+version: '3.8'
 
 services:
 
-  svc_mssql:
-    #image: microsoft/mssql-server-linux:latest
-    image: mcr.microsoft.com/mssql/server:2017-latest
+  db:
+    build:
+      context: .
+      # args:
+      #   buildno: 1.0.0
+    #image: mcr.microsoft.com/mssql/server:2019-latest
+    image: digitalmine/docker-mssql:latest
+    container_name: "sql1"
+    #hostname: "sql1"
     environment:
       ACCEPT_EULA: "Y"
       # Note: MSSQL passwords must be at least 8 characters long, contain upper case, lower case and digits.  
-      SA_PASSWORD: 5trongP@55w0rd 
+      SA_PASSWORD: 5trongP@55w0rd
+      MSSQL_PID: "Developer" 
     volumes:
-      - vol_mssql:/var/opt/mssql
+      - mssql2017-data:/var/opt/mssql
     ports:
-      - "5033:1433"
+      - "5533:1433"
 
-# Mounts
 volumes:
-  vol_mssql:
+  mssql2017-data:
