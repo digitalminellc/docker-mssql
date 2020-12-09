@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/mssql/server:2017-latest
 
-LABEL version="1.0.2"
+LABEL version="1.0.3"
 LABEL maintainer="steve@digitalmine.com"
 LABEL gitrepo="https://github.com/digitalminellc/docker-mssql"
 LABEL dockerrepo="https://hub.docker.com/r/digitalmine/docker-mssql"
@@ -10,7 +10,7 @@ RUN mkdir -p /usr/config
 WORKDIR /usr/config
 
 # Copy config directory to container
-COPY ./config /usr/config
+COPY . /usr/config
 
 # Grant permissions for to our scripts to be executable
 RUN chmod -R +x /usr/config
@@ -18,4 +18,4 @@ RUN chmod -R +x /usr/config
 # Expose Default SQL Server TCP/Port
 EXPOSE 1433
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["./scripts/entrypoint.sh"]
