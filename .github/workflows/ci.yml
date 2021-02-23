@@ -21,7 +21,7 @@ jobs:
     
     - name: Get Version
       id: get_version
-      run: echo ::set-output name=VERSION::${ GITHUB_REF#refs/tags/ } & echo "$VERSION" & echo "${{ github.event.release.tag_name }}"
+      run: echo ::set-output name=VERSION::"git describe --tags $(git rev-list --tags --max-count=1)"
     
     - name: Setup QEMU
       uses: docker/setup-qemu-action@v1
@@ -68,4 +68,4 @@ jobs:
         cache-to: type=local,dest=/tmp/.buildx-cache
 
     - name: Image Digest
-      run: echo ${{ steps.docker_build.outputs.digest }}
+      run: echo ${{ steps.docker_build.outputs.digest }}; echo ${{ steps.get_version.outputs.VERSION }}
