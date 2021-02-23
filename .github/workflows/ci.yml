@@ -19,8 +19,9 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v2
     
-    - name: Output Version
-      run: echo "$GITHUB_REF"
+    - name: Get Version
+      id: get_version
+      run: echo ::set-output name=VERSION::${ GITHUB_REF#refs/tags/ } & echo "$VERSION" & echo "${{ github.event.release.tag_name }}"
     
     - name: Setup QEMU
       uses: docker/setup-qemu-action@v1
