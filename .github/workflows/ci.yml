@@ -80,7 +80,7 @@ jobs:
           digitalmine/docker-mssql:latest
           digitalmine/docker-mssql:${{ github.ref }}
           ghcr.io/${{ github.repository_owner }}/docker-mssql:latest 
-          ghcr.io/${{ github.repository_owner }}/docker-mssql:${{ github.ref }} 
+          ghcr.io/${{ github.repository_owner }}/docker-mssql:${{ github.ref:10 }} 
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
 
