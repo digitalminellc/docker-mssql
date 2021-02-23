@@ -26,7 +26,7 @@ jobs:
     - name: Github Result
       id: tag
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.GHCR_TOKEN }}
         script: |
           return context.payload.ref.replace(/\/refs\/tags\//, '');
 
