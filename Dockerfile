@@ -1,7 +1,7 @@
 # https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-deployment
 FROM mcr.microsoft.com/mssql/server:2017-latest
 
-# LABEL version="1.1.0"
+# LABEL version="1.1.2"
 # LABEL maintainer="steve@digitalmine.com"
 # LABEL gitrepo="https://github.com/digitalminellc/docker-mssql"
 # LABEL dockerrepo="https://hub.docker.com/r/digitalmine/docker-mssql"
