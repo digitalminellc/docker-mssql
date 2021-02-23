@@ -19,8 +19,8 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v2
     
-    - name: Set `RELEASE_VERSION` Environment Variable
-      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
+    - name: Output Version
+      run: echo ${ GITHUB_REF:10 }
     
     - name: Setup QEMU
       uses: docker/setup-qemu-action@v1
@@ -62,9 +62,9 @@ jobs:
         push: ${{ github.event_name != 'pull_request' }}
         tags: |
           digitalmine/docker-mssql:latest
-          digitalmine/docker-mssql:${ RELEASE_VERSION }
+          digitalmine/docker-mssql:${ GITHUB_REF:10 }
           ghcr.io/${{ github.repository_owner }}/docker-mssql:latest 
-          ghcr.io/${{ github.repository_owner }}/docker-mssql:${ RELEASE_VERSION }
+          ghcr.io/${{ github.repository_owner }}/docker-mssql:${ GITHUB_REF:10 }
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
 
