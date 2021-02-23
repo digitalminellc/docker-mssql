@@ -1,6 +1,7 @@
 # MSSQL for Docker
 
-This is **NOT** intended for production purposes and is for development purposes only.
+This is **NOT** intended for production purposes.\  
+This is intended strictly for learning and/or development purposes only.
 
 ## Get Up & Running
 
@@ -33,16 +34,16 @@ Docker will then begin to do its thing.
 3. Run the following command:
 
   ```bash
-  docker build -t my-custom-mssql .
+  docker build -t yourname/yourapp .
   ```
 
 4. Start a new container using `docker run`
 
   ```bash
-  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=5trongP@55w0rd' -p 5533:1433 --name sql1 -d my-custom-mssql
+  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=5trongP@55w0rd' -p 5533:1433 --name your-container-name -d yourname/yourapp
   ```
 
-Note: MSSQL passwords must be at least 8 characters long, contain upper case, lower case and digits.
+**Note:** MSSQL passwords must be at least eight (8) characters long, contain upper case, lower case, and digits.
 
 ## Stopping The Container
 
@@ -60,6 +61,13 @@ OR
   ```bash
   docker-compose down
   ```
+
+## Microsoft `SQL Server in Docker` Documentation
+
+* [Microsoft Docker Hub](https://hub.docker.com/u/microsoft)
+* [Microsoft SQL Server in Docker Github Repo](https://github.com/Microsoft/mssql-docker)
+* [Quickstart: Run SQL Server container images with Docker](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker)
+* [Best Practices (Deploy and connect to SQL Server Docker containers)](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-deployment)
 
 ## Issues
 

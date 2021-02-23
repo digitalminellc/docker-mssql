@@ -63,16 +63,16 @@ fi
 # -------------------------------------------------------------------------------------------------------
 
 echo "$HR
-Loading scripts ..."
+Loading build scripts ..."
 
 # Example of a custom setup script
-#SETUP=$($SCMD -S 127.0.0.1 -i /usr/config/scripts/setup.sql)
+#SETUP=$($SCMD -S 127.0.0.1 -i /usr/build/setup.sql)
 
-# Example of installing the `northwinds` database
-#NORTHWINDS=$($SCMD -S 127.0.0.1 -i /usr/config/scripts/install-northwinds.sql)
+# Example of installing the `Northwind` database
+#NORTHWIND=$($SCMD -S 127.0.0.1 -i /usr/build/install-northwind.sql)
 
 # Example of restoring a DB from a backup file
-RESTORE=$($SCMD -S 127.0.0.1 -i /usr/config/scripts/restore.sql)
+RESTORE=$($SCMD -S 127.0.0.1 -i /usr/build/restore.sql)
 
 echo "$HR
 MSSQL is ready!"

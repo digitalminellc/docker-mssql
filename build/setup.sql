@@ -1,6 +1,6 @@
 /*
 ** Custom T-SQL Here
-** See `install-northwinds.sql` for more detailed example.
+** See `install-northwind.sql` for more detailed example.
 */
 
 SET NOCOUNT ON

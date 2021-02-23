@@ -5,17 +5,23 @@ services:
   db:
     build:
       context: .
+
     image: digitalmine/docker-mssql:latest
+
     container_name: "sql1"
+
     environment:
       ACCEPT_EULA: "Y"
       # Note: MSSQL passwords must be at least 8 characters long, contain upper case, lower case and digits.  
       SA_PASSWORD: 5trongP@55w0rd
       MSSQL_PID: "Developer" 
+
     volumes:
-      - mssql2017-data:/var/opt/mssql
+      - vol-mssql2017:/var/opt/mssql
+      - ./backup:/var/opt/mssql/backup
+
     ports:
       - "5533:1433"
 
 volumes:
-  mssql2017-data:
+  vol-mssql2017:
