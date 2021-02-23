@@ -19,20 +19,13 @@ jobs:
     # https://github.com/actions/checkout
     - name: Git Checkout
       uses: actions/checkout@v2
+      with: 
+        fetch-depth: 0
       
       #run: echo ::set-output name=VERSION::"git describe --tags $(git rev-list --tags --max-count=1)"
-    
-    # https://github.com/actions/github-script
-    - name: Github Result
-      id: tag
-      uses: actions/github-script@v3
-      with:
-        github-token: ${{ secrets.GHCR_TOKEN }}
-        script: |
-          return context.payload.ref.replace(/\/refs\/tags\//, '');
 
     - name: Echo
-      run: echo ${{ steps.tag.outputs.result }}
+      run: git describe --tags $(git rev-list --tags --max-count=1)
 
     # - name: Setup QEMU
     #   uses: docker/setup-qemu-action@v1
