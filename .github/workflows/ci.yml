@@ -15,17 +15,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
-    - name: Checkout Repo
+  
+    # https://github.com/actions/checkout
+    - name: Git Checkout
+      id: git_checkout
       uses: actions/checkout@v2
-    
-    - name: Get Version
-      id: get_version
-      run: echo ::set-output name=version::${GITHUB_REF#refs/tags/}
+      run: echo ::set-output name=VERSION::"git describe --tags"
       #run: echo ::set-output name=VERSION::"git describe --tags $(git rev-list --tags --max-count=1)"
     
     - name: Image Digest
-      run: echo ${{ steps.get_version.outputs.VERSION }}
+      run: echo ${{ steps.git_checkout.outputs.VERSION }}
 
     # - name: Setup QEMU
     #   uses: docker/setup-qemu-action@v1
