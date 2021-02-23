@@ -22,10 +22,16 @@ jobs:
       
       #run: echo ::set-output name=VERSION::"git describe --tags $(git rev-list --tags --max-count=1)"
     
-    - name: Image Digest
-      #run: echo ::set-output name=VERSION::"git describe --tags"
-      run: |
-        git describe --tags --abbrev=0
+    # https://github.com/actions/github-script
+    - name: Github Result
+      id: tag
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          return context.payload.ref.replace(/\/refs\/tags\//, '');
+
+    - name: Echo
+      run: echo ${{ steps.tag.outputs.result }}
 
     # - name: Setup QEMU
     #   uses: docker/setup-qemu-action@v1
