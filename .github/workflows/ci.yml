@@ -16,8 +16,12 @@ jobs:
 
     steps:
 
-      - name: Test
-        run: echo $GITHUB_REF | cut -c12-100
+      - name: Get Version
+        id: get_version
+        run: echo "##[set-output name=version]"; $GITHUB_REF | cut -c12-100
+
+      - name: Echo 
+        run: echo ${{ steps.get_version.outputs.version }}
   
     # https://github.com/actions/checkout
     # - name: Git Checkout
