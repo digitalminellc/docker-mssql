@@ -1,4 +1,4 @@
-<img src="https://repository-images.githubusercontent.com/319471557/ccbb6400-7803-11eb-8115-eae55d3ead83" alt="Docker + MSSQL" style="max-width:1200px;" />
+<img src="https://repository-images.githubusercontent.com/319471557/ccbb6400-7803-11eb-8115-eae55d3ead83" alt="Docker + MSSQL" width="800" />
 
 # MSSQL for Docker
 
