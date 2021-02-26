@@ -1,3 +1,5 @@
+![Docker + MSSQL](https://repository-images.githubusercontent.com/319471557/ccbb6400-7803-11eb-8115-eae55d3ead83)
+
 # MSSQL for Docker
 
 This is **NOT** intended for production purposes. \
