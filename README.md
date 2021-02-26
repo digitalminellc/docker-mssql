@@ -1,6 +1,6 @@
 <img src="https://repository-images.githubusercontent.com/319471557/ccbb6400-7803-11eb-8115-eae55d3ead83" alt="Docker + MSSQL" width="800" />
 
-# MSSQL for Docker
+# Docker + Microsoft&reg; SQL Server
 
 This is **NOT** intended for production purposes. \
 This is intended strictly for learning and/or development purposes only.
